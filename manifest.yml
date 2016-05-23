@@ -1,0 +1,32 @@
+---
+applications:
+- name: i058650-java-hello-world-backend
+  port: 65540 #the port used for the java backend
+  memory: 128M
+  instances: 1
+  path: java/target/sample-xsa-java-0.0.1-SNAPSHOT.war
+  services:
+    - i058650-java-hello-application
+    - i058650-hdi-sample
+  env:
+    TARGET_RUNTIME: tomee
+
+
+- name: i058650-sample-java-db
+  path: db
+  memory: 128M
+  services:
+    - i058650-hdi-sample
+
+
+- name: i058650-java-hello-world-approuter
+  path: approuter
+  memory: 128M
+  env:
+    destinations: >
+      [
+        {"name":"java", "url":"https://blri4w1003:65540", "forwardAuthToken": true}
+      ]
+  services:
+    - i058650-java-hello-application
+    

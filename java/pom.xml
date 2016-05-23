@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+      <groupId>com.sap.blrl.i058650</groupId>
+      <artifactId>sample-xsa-application</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.sap.blrl.i058650</groupId>
+  <artifactId>sample-xsa-java</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>XSA_SAMPLE_WAR</name>
+  
+  <properties>
+  	<tomee-jaxrs.version>1.7.2</tomee-jaxrs.version>
+  	<eclipseLink.version>2.6.0</eclipseLink.version>
+  	<hanadriver.version>1.111.1</hanadriver.version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.openejb</groupId>
+  		<artifactId>tomee-jaxrs</artifactId>
+  		<version>${tomee-jaxrs.version}</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.eclipse.persistence</groupId>
+  		<artifactId>eclipseLink</artifactId>
+  		<version>${eclipseLink.version}</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.sap.db.jdbc</groupId>
+  		<artifactId>ngdbc</artifactId>
+  		<version>${hanadriver.version}</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.tomcat</groupId>
+  		<artifactId>tomcat-servlet-api</artifactId>
+  		<version>LATEST</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies>
+</project>

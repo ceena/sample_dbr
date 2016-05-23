@@ -1,0 +1,43 @@
+_schema-version: "2.0.0"
+ID: com.sap.dbr.blrl.i058650.sample_xsa_application
+version: 0.1.0
+
+modules:
+  - name: i058650-java-hello-world-approuter
+    type: javascript.nodejs
+    path: approuter/
+    requires:
+      - name: i058650-java-hello-application
+      - name: java
+        group: destinations
+        properties:
+          name: java
+          url: ~{url}
+          forwardAuthToken: true
+    
+  - name: i058650-java-hello-world-backend
+    type: java.tomee
+    path: java/target/sample-xsa-java.war
+    provides: 
+      - name: java
+        properties:
+          url: "${default-url}"
+    requires:
+      - name: i058650-java-hello-application
+      - name: i058650-hdi-sample
+      - name: i058650-sample-java-db
+
+  - name: i058650-sample-java-db
+    type: com.sap.xs.hdi
+    path: db/
+    requires:
+      - name: i058650-hdi-sample
+
+resources:
+  - name: i058650-hdi-sample
+    type: com.sap.xs.hdi-container
+    
+  - name: i058650-java-hello-application
+    type: com.sap.xs.uaa-space
+    parameters:
+      config-path: xs-security.json   

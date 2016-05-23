@@ -1,0 +1,10 @@
+namespace com.sap.dbr.blrl;
+
+context HelloWorld {
+
+  Entity MESSAGE {
+     KEY REASON: String(100);
+     DESCRIPTION: String(500);
+  };
+
+};

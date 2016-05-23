@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy file="../SL_MANIFEST.XML" tofile="C:\Users\I058650\Desktop\sample-xsa-java-app\sample-xsa-java-app\assembly\target/SL_MANIFEST.XML"/>
+</target>
+</project>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<resources>
+	
+	<Resource id="jdbc/i058650-hello-world-hdi" provider="xs.openejb:XS Default JDBC Database" type="javax.sql.DataSource">
+	   service=i058650-hdi-sample
+	</Resource>
+	
+	<Service id="jsonProvider" class-name="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+		dropRootElement = true
+		dropCollectionWrapperElement = true
+		serialiazeAsArray = true
+		unwrapped = true
+	</Service>
+</resources>

@@ -1,0 +1,13 @@
+_schema-version: "2.0.0"
+ID: com.sap.dbr.blrl.i058650.sample_xsa_application.config 
+extends: com.sap.dbr.blrl.i058650.sample_xsa_application
+
+modules:
+  - name: i058650-java-hello-world-approuter
+    parameters:
+      memory: 128M
+
+  - name: i058650-java-hello-world-backend
+    parameters:
+      memory: 512M
+      instances: 1

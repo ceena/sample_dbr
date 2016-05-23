@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/hello",
+  "authenticationMethod": "route",
+  "logout":  {
+    "logoutEndpoint":  "/do/logout"
+  },
+  "routes": [
+  {
+    "source": "/(.*)",
+    "target": "$1",
+    "destination": "java"
+  }
+]
+}
